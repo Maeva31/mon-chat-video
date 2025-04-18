@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='shortcut icon' href='assets/bb3.png' />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/bb3.png" />
+    <link rel="stylesheet" href="moby.css">
+    <title>baby-tchat.com</title>
+<style>
+        h1 {
+            margin-left: 112px;
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            margin-block: .67em;
+        }
+
+        lgo {
+            font-family: 'Arial', sans-serif;
+            /*background: url('baby/5.webp') no-repeat top center;*/
+            /*background-size: 22%; */
+            /* Ajustez la taille de l'image ici (par exemple 50% ou une taille fixe) */
+            background-color: #1c0033;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            text-shadow: 0 0 10px rgba(255,0, 155, 0.63);
+            background: url('assets/bb2g.png') no-repeat top center;
+            background-size: 1080px 620px;
+            /* Largeur et hauteur spécifiques Ajustez la taille de l'image ici (par exemple 50% ou une taille fixe) */
+            background-color: #1c0033;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: url('baby/5.webp') no-repeat top center;
+            background-size: 22%;
+            /* Ajustez la taille de l'image ici (par exemple 50% ou une taille fixe) */
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+            padding-right: 135px;
+            padding: 10px;
+            height: 250px;
+            top: 58px;
+            position: relative;
+            bottom: 0px;
+        }
+
+        .login-form {
+            margin-top: -224px;
+            /*margin-left: 896px;*/
+            display: inline-block;
+            background-color: rgba(145, 70, 255, 0.23);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            width: 140px;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+            /* Taille plus compacte */
+            margin-left: 734px;
+        }
+
+        chat-form {
+            height: 346px;
+            /*width: 122px;*/
+            margin-top: -18px;
+            margin-left: 0px;
+            width: 140px;
+        }
+
+        .login-form label {
+            display: inline-grid;
+            margin-top: 0px;
+            font-size: initial;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+            /* Taille r&#65533;duite des labels */
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="number"],
+        .login-form select {
+            width: 89%;
+            padding: 8px;
+            /* Réduction de la taille des champs */
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+            color: #000;
+            font-size: 0.9em;
+            /* Taille réduite du texte dans les champs */
+        }
+
+        .login-form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            margin-top: 10px;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+        }
+
+        .lgbt-options {
+            display: none;
+            margin-top: 10px;
+            background-color: rgba(249, 70, 255, 0.16);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .lgbt-options label {
+            font-size: 0.8em;
+            /* Réduction des labels dans les options LGBTQ+ */
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63); 
+            margin-bottom: 5px;
+            box-shadow: rgb(65, 0, 218) 0px 4px 10px;
+        }
+
+        .lgbt-options input {
+            margin-left: 5px;
+            box-shadow: rgb(65, 0, 218) 0px 4px 10px;
+            text-shadow: 0 0 10px rgba(255, 0, 155, 0.63);
+        }
+    </style>
+</head>
+<h1>
+    <img src="baby/1.png" style="display: none;">
+    <img src="baby/2.png" style="display: none;">
+    <img src="baby/3.png" style="display: block;">
+    <img src="baby/4.png" style="display: none;">
+    <img src="baby/5.png" style="display: none;">
+    <img src="baby/6.png" style="display: none;">
+    <img src="baby/7.png" style="display: none;">
+    <img src="baby/8.png" style="display: none;">
+
+    <script type="text/javascript">
+
+        I = 1;
+        Imax = document.images.length - 1;
+        setTimeout(suivante, 5000);
+        function suivante() {
+            document.images[I].style.display = "none";
+            if (I < Imax)
+                I++;
+            else
+                I = 1;
+            document.images[I].style.display = "block";
+            setTimeout(suivante, 5000)
+        }
+
+    </script>
+</h1>
+
+<body>
+    <h2>
+        <div id="lgo">
+        </div>
+    </h2>
+    <div class="container">
+        <div class="login-form">
+            <form id="chatForm" onsubmit="encryptFormData(event)">
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" name="pseudo" required>
+
+                <label for="age">Age :</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="genre">Genre :</label>
+                <select id="genre" name="genre">
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+
+                <label for="code-postal">Code postal:</label>
+                <input type="text" id="code-postal" name="code-postal" required>
+
+                <label for="lgbtq">LGBTQ+ :</label>
+                <input type="checkbox" id="lgbtq" name="lgbtq" onclick="toggleLGBTOptions()">
+
+                <div class="lgbt-options" id="lgbt-options">
+                    <label>Lesbienne :</label>
+                    <input type="radio" name="orientation" value="Lesbienne">
+
+                    <label>Gay :</label>
+                    <input type="radio" name="orientation" value="Gay">
+
+                    <label>Transgenre :</label>
+                    <input type="radio" name="orientation" value="Transgenre">
+
+                    <label>Travesti :</label>
+                    <input type="radio" name="orientation" value="Travesti">
+                </div>
+
+                <button type="submit">Rejoindre le Chat</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        // Affiche/Masque les options LGBTQ+
+        function toggleLGBTOptions() {
+            var lgbtCheckbox = document.getElementById('lgbtq');
+            var lgbtOptions = document.getElementById('lgbt-options');
+
+            // Vérifie si le checkbox est coché ou non
+            if (lgbtCheckbox.checked) {
+                lgbtOptions.style.display = 'block'; // Affiche si coché
+            } else {
+                lgbtOptions.style.display = 'none';  // Masque sinon
+            }
+        }
+
+        // Encode les données du formulaire en Base64
+        function encryptFormData(event) {
+            event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+            // Récupère les données du formulaire
+            var formData = new FormData(document.getElementById('chatForm'));
+
+            // Convertit les données du formulaire en un objet clé-valeur
+            var dataObj = {};
+            formData.forEach((value, key) => {
+                dataObj[key] = value;
+            });
+
+            // Convertit l'objet en JSON puis encode en Base64
+            var jsonString = JSON.stringify(dataObj);
+            var encodedData = btoa(jsonString);  // Utilise Base64
+
+            console.log("Données encodées : ", encodedData); // Affiche les données cryptées dans la console
+
+            // Redirige avec les données encodées (simulant une soumission)
+            window.location.href = "https://baby-tchat.com/?data=" + encodeURIComponent(encodedData);
+        }
+    </script>
+     <script src="moby.js"></script>
+</body>
+
+</html>
